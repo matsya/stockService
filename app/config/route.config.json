@@ -1,0 +1,83 @@
+{
+  "routes": [
+    {
+      "route": "/v1/stocks/symbols",
+      "method": "GET",
+      "controller": "../controllers/v1/stock/stock-controller"
+    },
+    {
+      "route": "/v1/stocks/symbols",
+      "method": "POST",
+      "controller": "../controllers/v1/stock/stock-controller"
+    },
+    {
+      "route": "/v1/stocks/:id",
+      "method": "DELETE",
+      "controller": "../controllers/v1/stock/stock-controller"
+    },
+    {
+      "route": "/v1/stocks/earnings",
+      "method": "GET",
+      "controller": "../controllers/v1/stock/stock-controller",
+      "action": "getEarningsCalendar"
+    },
+    {
+      "route": "/v1/stocks/ipo",
+      "method": "GET",
+      "controller": "../controllers/v1/stock/stock-controller",
+      "action": "getIPOCalendar"
+    },
+    {
+      "route": "/v1/stocks/trend/:trend",
+      "method": "GET",
+      "controller": "../controllers/v1/stock/stock-controller",
+      "action": "getTopTrending"
+    },
+    {
+      "route": "/v1/stocks/sentiment/:symbol",
+      "method": "GET",
+      "controller": "../controllers/v1/stock/stock-controller",
+      "action": "getSentiment"
+    },
+    {
+      "route": "/v1/stocks/:id",
+      "method": "GET",
+      "controller": "../controllers/v1/stock/stock-controller",
+      "action": "getStockById"
+    },
+
+    {
+      "route": "/v1/portfolios",
+      "method": "GET",
+      "controller": "../controllers/v1/portfolio/portfolio-controller"
+    },
+    {
+      "route": "/v1/portfolios",
+      "method": "POST",
+      "controller": "../controllers/v1/portfolio/portfolio-controller"
+    },
+    {
+      "route": "/v1/portfolios/:id",
+      "method": "DELETE",
+      "controller": "../controllers/v1/portfolio/portfolio-controller"
+    },
+    {
+      "route": "/v1/portfolios/:id",
+      "method": "GET",
+      "controller": "../controllers/v1/portfolio/portfolio-controller",
+      "action" : "getById"
+    },
+    {
+      "route": "/v1/portfolios/:id/stocks",
+      "method": "POST",
+      "controller": "../controllers/v1/portfolio/portfolio-controller",
+      "action" : "addStock"
+    },
+    {
+      "route": "/v1/portfolios/:id/stocks/:symbol",
+      "method": "DELETE",
+      "controller": "../controllers/v1/portfolio/portfolio-controller",
+      "action" : "removeStock"
+    }
+  ]
+}

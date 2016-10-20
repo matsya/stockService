@@ -1,0 +1,44 @@
+{
+  "name": "learnRestfulApi",
+  "version": "1.0.0",
+  "description": "learn",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "test-coverage": "npm test && istanbul cover node_modules/mocha/bin/_mocha -- -R spec",
+    "install-local": "npm install -g mocha & npm install -g node-inspector & npm install",
+    "start": "node server.js 1 prod 127.0.0.1 3000 9000",
+    "debug": "node-debug server.js 0 dev 127.0.0.1 3000 9000"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "tpradeep",
+  "license": "",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.1.0",
+    "sinon": "^1.17.6"
+  },
+  "dependencies": {
+    "array-pivot": "^1.0.1",
+    "bluebird": "^3.4.6",
+    "body-parser": "^1.15.2",
+    "cheerio": "^0.22.0",
+    "cheerio-tableparser": "^1.0.1",
+    "cluster-service": "^2.0.0",
+    "express": "^4.14.0",
+    "google-finance": "^0.1.6",
+    "lodash": "^4.16.4",
+    "moment": "^2.15.1",
+    "mongoose": "^4.6.3",
+    "request": "^2.75.0",
+    "swagger-restify-mw": "^0.7.0",
+    "yahoo-finance": "^0.2.14"
+  }
+}
