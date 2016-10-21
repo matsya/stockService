@@ -1,20 +1,28 @@
 # dollarGain
 Trading platform which helps day traders to buy sell stocks
 
-# Yoman to set up the Restful API server scaffold 
-https://github.com/trwalker/generator-express-rest-api
+### Setup  
 
-# Stock Api @ a rate limit of 40/sec 
-http://dev.markitondemand.com/MODApis/Api/v2/Quote/json?symbol=AAPL
+* [yoman] - To set up the Restful API server scaffold 
+* [swagger] - Setup up swagger with node tutorial
 
-# yahoo and google finance api
-https://github.com/pilwon/node-google-finance
 
-# Paid Stock sentiment api 
-http://www.knowsis.com/
+### 3rd-party APIs
+* [google-finance] Node js library used to fetch stock History
+* [markitondemand] Useful to display live charts of stock
+* [knowis] paid service to get sentiments on stocks
 
-# To run swagger 
+
+
+### How to run the project
 1. Start the project 
-  swagger project start
-  swagger project edit 
 
+```
+$ swagger project start && swagger project edit 
+```
+
+ [yoman]: <https://github.com/trwalker/generator-express-rest-api>
+ [google-finance]: <https://github.com/pilwon/node-google-finance>
+ [markitondemand]:<http://dev.markitondemand.com/MODApis/Api/v2/Quote/json?symbol=AAPL>
+ [knowis]: <http://www.knowsis.com/>
+ [swagger]: <https://scotch.io/tutorials/speed-up-your-restful-api-development-in-node-js-with-swagger>
