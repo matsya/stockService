@@ -1,9 +1,6 @@
 var Stock = require('../../model/stock/stock');
 
-function StockRepository() {
-}
-
-StockRepository.prototype = {
+module.exports = {
   fetchSymbols   	: fetchSymbols,
   addStocks       : addStocks,
   removeStocks    : removeStocks,
@@ -95,7 +92,3 @@ function removeStocks(id) {
         });
     });
 }
-
-var stockRepository = new StockRepository();
-
-module.exports = stockRepository;

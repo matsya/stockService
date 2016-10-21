@@ -1,0 +1,155 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: StockService
+# during dev, should point to your local machine
+host: localhost:3000
+# basePath prefixes all resource paths 
+basePath: /
+# 
+schemes:
+  # tip: remove http to make production-grade
+  - http
+  - https
+# format of bodies a client can send (Content-Type)
+consumes:
+  - application/json
+# format of the responses to the client (Accepts)
+produces:
+  - application/json
+paths:
+  /swagger:
+    x-swagger-pipe: swagger_raw
+
+  /stocks/symbols:
+    # our controller name
+    x-swagger-router-controller: stock/stock-controller
+    get:
+      operationId: get
+      description: get list of stock symbols
+      # define the type of response for Success "200" and Error
+      responses:
+        "200":
+          description: Success
+    post:
+      operationId: post
+      description: add a stock
+      # define the type of response for Success "200" and Error
+      responses:
+        "200":
+          description: Success
+  /stocks/:id:
+    # our controller name
+    x-swagger-router-controller: stock/stock-controller
+    delete:
+      operationId: delete
+      description: delete a stock
+      # define the type of response for Success "200" and Error
+      responses:
+        "200":
+          description: Success
+    get:
+      operationId: getStockById
+      description: get a stock
+      # define the type of response for Success "200" and Error
+      responses:
+        "200":
+          description: Success
+  /stocks/earnings:
+    # our controller name
+    x-swagger-router-controller: stock/stock-controller
+    get:
+      operationId: showEarningsCalendar
+      description: get earnings
+      # define the type of response for Success "200" and Error
+      responses:
+        "200":
+          description: Success
+
+  /stocks/ipo:
+    # our controller name
+    x-swagger-router-controller: stock/stock-controller
+    get:
+      operationId: showIPOCalendar
+      description: get list of IPO stocks
+      # define the type of response for Success "200" and Error
+      responses:
+        "200":
+          description: Success
+
+  /stocks/market/:trend:
+    # our controller name
+    x-swagger-router-controller: stock/stock-controller
+    get:
+      operationId: showMarketTrend
+      description: get list of stock symbols
+      # define the type of response for Success "200" and Error
+      responses:
+        "200":
+          description: Success
+
+  /stocks/sentiment/:symbol:
+    # our controller name
+    x-swagger-router-controller: stock/stock-controller
+    get:
+      operationId: getSentiment
+      description: get list of stock symbols
+      # define the type of response for Success "200" and Error
+      responses:
+        "200":
+          description: Success
+
+  /portfolios:
+    # our controller name
+    x-swagger-router-controller: portfolio/portfolio-controller
+    get:
+      operationId: getAll
+      description: get all portfolio
+      # define the type of response for Success "200" and Error
+      responses:
+        "200":
+          description: Success
+    post:
+      operationId: create
+      description: create a portfolio
+      # define the type of response for Success "200" and Error
+      responses:
+        "200":
+          description: Success
+
+  /portfolios/:id:
+    # our controller name
+    x-swagger-router-controller: portfolio/portfolio-controller
+    get:
+      operationId: getById
+      description: get portfolio by Id
+      # define the type of response for Success "200" and Error
+      responses:
+        "200":
+          description: Success
+    delete:
+      operationId: remove
+      description: delete a portfolio
+      # define the type of response for Success "200" and Error
+      responses:
+        "200":
+          description: Success
+
+  /portfolios/:id/stocks:
+    # our controller name
+    x-swagger-router-controller: portfolio/portfolio-controller
+    post:
+      operationId: addStock
+      description: get portfolio by Id
+      # define the type of response for Success "200" and Error
+      responses:
+        "200":
+          description: Success
+    delete:
+      operationId: removeStock
+      description: delete a portfolio
+      # define the type of response for Success "200" and Error
+      responses:
+        "200":
+          description: Success
+# complex objects have schema definitions

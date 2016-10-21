@@ -1,8 +1,5 @@
 var portfolioRepository = require('../../repositories/portfolio/portfolio-repository');
 
-function PortfolioService() {
-}
-
 // fetch all portfolios
 function fetchAll() {
 	return portfolioRepository.getPortfolioData();
@@ -49,7 +46,7 @@ function removePortfolio(id) {
 
 // Call different service eg: notification
 // analytics service or Event Souceing
-PortfolioService.prototype = {
+module.exports = {
 	getAll: fetchAll,
   	getPortfolioById: fetchPortfolioById,
   	createPortfolio: createPortfolio,
@@ -57,6 +54,3 @@ PortfolioService.prototype = {
   	deletePortfolio: removePortfolio
 };
 
-var portfolioService = new PortfolioService();
-
-module.exports = portfolioService;

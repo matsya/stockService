@@ -1,12 +1,22 @@
-var settingsConfig = require('./app/config/settings/settings-config');
 
+'use strict';
 
-if(settingsConfig.settings.clusterEnabled === 1) {
-  require('cluster-service').start({ workers: './app/config/worker-config.js',
-    accessKey: settingsConfig.settings.clusterAccessKey,
-    host: settingsConfig.settings.hostName,
-    port: settingsConfig.settings.masterPort });
-}
-else {
-  require('./app/config/worker-config.js');
-}
+var SwaggerExpress = require('swagger-express-mw');
+var app = require('express')();
+var db = require('./api/model/db');
+module.exports = app; // for testing
+
+var config = {
+  appRoot: __dirname // required config
+};
+
+SwaggerExpress.create(config, function(err, swaggerExpress) {
+  if (err) { throw err; }
+
+  // install middleware
+  swaggerExpress.register(app);
+
+  var port = process.env.PORT || 3000;
+  app.listen(port);
+
+});

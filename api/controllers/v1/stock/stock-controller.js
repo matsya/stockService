@@ -1,9 +1,5 @@
 var stockService = require('../../../services/stock/stock-service');
 
-function StockController() {
-
-}
-
 function getAllSymbols(req, res, next) {
 stockService.getAllSymbols()
         .then(function(responseData){
@@ -133,18 +129,14 @@ function getStockById(req, res, next){
         });
 }
 
-StockController.prototype = {
+module.exports = {
   get               : getAllSymbols,
   post              : addSymbols,
   delete            : removeStocks,
   getStockById  : getStockById,
-  getEarningsCalendar : getEarningsCalendar,
-  getIPOCalendar : getIPOCalendar,
+  showEarningsCalendar : getEarningsCalendar,
+  showIPOCalendar : getIPOCalendar,
   getSentiment : getSentiment,
-  getTopTrending : getTopTrending
+  showMarketTrend : getTopTrending
 
 };
-
-var stockController = new StockController();
-
-module.exports = stockController;

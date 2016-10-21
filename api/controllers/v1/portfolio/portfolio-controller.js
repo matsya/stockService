@@ -1,9 +1,5 @@
 var portfolioService = require('../../../services/portfolio/portfolio-service');
 
-function PortfolioController() {
-
-}
-
 //GET all 
 function getAll(req, res, next) {
     portfolioService.getAll()
@@ -96,16 +92,12 @@ function removeStocks(req,res,next) {
 }
 
 //Controller perform basic validation on the input data
-PortfolioController.prototype = {
-  get           : getAll,
+module.exports = {
+  getAll           : getAll,
   getById       : getPortfolioById,
-  post          : createPortfolio,
+  create          : createPortfolio,
   put           : updatePortfolio,
-  delete        : deletePortfolio,
+  remove        : deletePortfolio,
   addStocks     : addStocks,
   removeStocks  : removeStocks
 };
-
-var portfolioController = new PortfolioController();
-
-module.exports = portfolioController;

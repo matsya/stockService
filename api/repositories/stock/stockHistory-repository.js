@@ -1,9 +1,5 @@
 var StockHistory = require('../../model/stock/stockHistory');
 
-function StockHistoryRepository() {
-}
-
-
 function getStockBySymbol(symbol) {
     return new Promise(function(resolve, reject) {
     StockHistory.find({"symbol":symbol}).exec(function (err,stock) {
@@ -38,11 +34,8 @@ function removeStock(id) {
     });
 }
 
-StockHistoryRepository.prototype = {
+module.exports = {
   addStocks       : addStocks,
   removeStock    : removeStock,
   getStockBySymbol : getStockBySymbol
 };
-var stockHistoryRepository = new StockHistoryRepository();
-
-module.exports = stockHistoryRepository;

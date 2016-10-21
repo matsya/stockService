@@ -10,22 +10,6 @@ var yahooFinance = require('yahoo-finance');
 var googleFinance = require('google-finance');
 var moment = require('moment');
 
-function StockService() {
-
-}
-
-StockService.prototype = {
-  getAllSymbols   : getAllSymbols,
-  addSymbols      : addSymbols,
-  removeStocks    : removeStocks,
-  getStockById    : getStockById,
-  getEarnings     : getEarnings,
-  getIPOStocks    : getIPOStocks,
-  getSentiment    : getSentiment,
-  getTopTrending  : getTopTrending
-};
-
-
 function getEarnings() {
    return stockGrabber.getEarningsCalendar();
    
@@ -173,8 +157,15 @@ function validateSybmolExists(symbols){
         return Promise.reject(err);
       })
  }
+ 
+module.exports = {
+  getAllSymbols   : getAllSymbols,
+  addSymbols      : addSymbols,
+  removeStocks    : removeStocks,
+  getStockById    : getStockById,
+  getEarnings     : getEarnings,
+  getIPOStocks    : getIPOStocks,
+  getSentiment    : getSentiment,
+  getTopTrending  : getTopTrending
+};
 
-
-var stockService = new StockService();
-
-module.exports = stockService;

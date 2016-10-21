@@ -12,3 +12,9 @@ https://github.com/pilwon/node-google-finance
 
 # Paid Stock sentiment api 
 http://www.knowsis.com/
+
+# To run swagger 
+1. Start the project 
+  swagger project start
+  swagger project edit 
+

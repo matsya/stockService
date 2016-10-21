@@ -1,9 +1,5 @@
 var StockSummary = require('../../model/stock/stockSummary');
 
-function StockSummaryRepository() {
-}
-
-
 function getStockBySymbol(symbol) {
     return new Promise(function(resolve, reject) {
     StockSummary.find({"symbol":symbol}).exec(function (err,stock) {
@@ -47,11 +43,8 @@ function removeStock(id) {
     });
 }
 
-StockSummaryRepository.prototype = {
+module.exports = {
   addStocks       : addStocks,
   removeStock    : removeStock,
   getStockBySymbol : getStockBySymbol
 };
-var stockSummaryRepository = new StockSummaryRepository();
-
-module.exports = stockSummaryRepository;
